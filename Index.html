@@ -1,2 +1,129 @@
-# Intelligent-timetable-system-
-Smart timetable generation and clash detection system for colleges
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Timetable System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Intelligent Timetable Generation & Clash Detection</h1>
+    <p>Smart scheduling for Faculty, Students, Classrooms and Laboratories</p>
+</header>
+
+<div class="container">
+
+    <section class="card">
+        <h2>Timetable Generator</h2>
+
+        <div class="form-grid">
+            <div>
+                <label>Section</label>
+                <select id="section">
+                    <option value="CSE-A">CSE-A</option>
+                    <option value="CSE-B">CSE-B</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Subject</label>
+                <select id="subject">
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="Java Programming">Java Programming</option>
+                    <option value="Digital Electronics">Digital Electronics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Python">Python</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Faculty</label>
+                <select id="faculty">
+                    <option value="Dr. Ravi">Dr. Ravi</option>
+                    <option value="Prof. Anitha">Prof. Anitha</option>
+                    <option value="Dr. Kumar">Dr. Kumar</option>
+                    <option value="Prof. Lakshmi">Prof. Lakshmi</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Room</label>
+                <select id="room">
+                    <option value="Room 101">Room 101</option>
+                    <option value="Room 102">Room 102</option>
+                    <option value="Lab 1">Lab 1</option>
+                    <option value="Lab 2">Lab 2</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Day</label>
+                <select id="day">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Time</label>
+                <select id="time">
+                    <option value="09:00 - 10:00">09:00 - 10:00</option>
+                    <option value="10:00 - 11:00">10:00 - 11:00</option>
+                    <option value="11:00 - 12:00">11:00 - 12:00</option>
+                    <option value="01:00 - 02:00">01:00 - 02:00</option>
+                    <option value="02:00 - 03:00">02:00 - 03:00</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="addSchedule()">Add to Timetable</button>
+        <button class="generate" onclick="generateSample()">Generate Sample Timetable</button>
+
+        <div id="message"></div>
+    </section>
+
+    <section class="card">
+        <h2>Timetable</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Section</th>
+                        <th>Subject</th>
+                        <th>Faculty</th>
+                        <th>Room/Lab</th>
+                    </tr>
+                </thead>
+
+                <tbody id="timetableBody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Clash Detection</h2>
+        <div id="clashBox">
+            <p class="success">No clashes detected.</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Intelligent Timetable Management System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
